@@ -8,10 +8,40 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/my.css' %}">
 </head>
 <body>
-<div id="site_head">
+
+<!-- Navigation bar -->
+
+<nav>
+    <div id="site_head">
+        <a class="navbar-brand" href="#">WCGL</a>
+        <div>
+            <ul>
+                <li><a href="#">Рандом</a></li>
+                <li><a href="#">Поиск</a></li>
+                <li><a href="#">Войти</a></li>
+                <li>
+                    <ul>
+                        <li><a href="#">Профиль</a></li>
+                        <li><a href="#">Админ-панель</a></li>
+                        <li><a href="#">Выйти</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Content -->
+{% block content %}
+<div>Zdarova</div>
+{% endblock content %}
+
+<!-- Footer -->
+<div id="footer">
     <a href="http://github.com/heshegto" target="_blank">My git</a>
     <a href="mailto:heshkin@gmail.com" target="_blank">My mail</a>
 </div>
-<div>Zdarova</div>
+
 </body>
 </html>
