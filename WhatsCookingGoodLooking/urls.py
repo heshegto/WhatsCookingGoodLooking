@@ -20,5 +20,5 @@ from cooking.views import IndexView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('cooking.urls', namespace='index'))
+    path('', include('cooking.urls', namespace='cooking'))
 ]
