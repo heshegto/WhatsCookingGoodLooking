@@ -11,3 +11,7 @@ Wish me luck
 - Base of food (and where buy it with the cheapest price)
 - Base of grocery stores (and their food prices)
 - Base of recipes (and food stuff that they required)
+
+# Frontend
+
+Mister Julio Codes really helped me with frontend stuff (css and html). Here is his GitHub: https://github.com/bytesoftheweb

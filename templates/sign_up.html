@@ -1,0 +1,41 @@
+{% extends 'base_login_signup.html' %}
+
+{% block title %} Sign up {% endblock title %}
+{% block container_name %}Sign up {% endblock container_name %}
+
+{% block content %}
+    <div class="form__group">
+        <i class="ri-user-line form__icon"></i>
+        <input type="text" placeholder="Name" required class="form__input" />
+        <span class="form__bar"></span>
+    </div>
+    <div class="form__group">
+        <i class="ri-mail-line form__icon"></i>
+        <input type="text" placeholder="Email" required class="form__input" />
+        <span class="form__bar"></span>
+    </div>
+    <div class="form__group">
+        <i class="ri-lock-line form__icon"></i>
+        <input
+            type="password"
+            placeholder="Password"
+            required
+            class="form__input"
+        />
+        <span class="form__bar"></span>
+    </div>
+    <div class="form__group">
+        <i class="ri-lock-line form__icon"></i>
+        <input
+            type="password"
+            placeholder="Confirm password"
+            required
+            class="form__input"
+        />
+        <span class="form__bar"></span>
+    </div>
+    <button type="submit" class="form__button">Sign up</button>
+    <p class="form__switch">
+        Already have an account? <a href="{% url 'cooking:login' %}">Login</a>
+    </p>
+{% endblock content %}
