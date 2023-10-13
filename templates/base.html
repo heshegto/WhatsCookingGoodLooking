@@ -18,14 +18,17 @@
             <ul>
                 <li><a href="#">Рандом</a></li>
                 <li><a href="#">Поиск</a></li>
-                <li><a href="{% url 'cooking:login' %}">Войти</a></li>
+                 {% if user.is_authenticated %}
                 <li>
                     <ul>
                         <li><a href="#">Профиль</a></li>
                         <li><a href="{% url 'admin:index' %}">Админ-панель</a></li>
-                        <li><a href="#">Выйти</a></li>
+                        <li><a href="{% url 'user:logout' %}">Выйти</a></li>
                     </ul>
                 </li>
+                {% else %}
+                    <li><a href="{% url 'user:login' %}">Войти</a></li>
+                {% endif %}
             </ul>
         </div>
     </div>

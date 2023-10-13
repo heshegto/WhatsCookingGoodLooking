@@ -26,8 +26,10 @@ class Receipt(ReceiptStep):
 
 
 class StepsQueue(models.Model):
-    from_receipt = models.ForeignKey(to=Receipt, on_delete=models.CASCADE, null=False, blank=False, related_name='from_reciept')
-    to_step = models.ForeignKey(to=ReceiptStep,  on_delete=models.CASCADE, null=False, blank=False, related_name='to_step')
+    from_receipt = models.ForeignKey(to=Receipt, on_delete=models.CASCADE, null=False, blank=False,
+                                     related_name='from_reciept')
+    to_step = models.ForeignKey(to=ReceiptStep, on_delete=models.CASCADE, null=False, blank=False,
+                                related_name='to_step')
     position_in_queue = models.PositiveSmallIntegerField(default=1)
 
     class Meta:

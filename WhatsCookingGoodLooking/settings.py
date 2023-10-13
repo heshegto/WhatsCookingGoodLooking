@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cooking.apps.CookingConfig',
+    'user.apps.UserConfig'
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,9 @@ MEDIA_ROOT = STATICFILES_DIRS[0] / 'media'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'user.User'
+LOGIN_URL = 'user:login'
+LOGIN_REDIRECT_URL = 'cooking:index'
+LOGOUT_REDIRECT_URL = 'cooking:index'
+

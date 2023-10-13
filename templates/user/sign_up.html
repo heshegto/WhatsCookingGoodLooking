@@ -1,0 +1,28 @@
+{% extends 'user/base.html' %}
+
+{% block content %}
+    <div class="form__group">
+        <i class="ri-user-line form__icon"></i>
+        {{ form.username }}
+        <span class="form__bar"></span>
+    </div>
+    <div class="form__group">
+        <i class="ri-mail-line form__icon"></i>
+        {{ form.email }}
+        <span class="form__bar"></span>
+    </div>
+    <div class="form__group">
+        <i class="ri-lock-line form__icon"></i>
+        {{ form.password1 }}
+        <span class="form__bar"></span>
+    </div>
+    <div class="form__group">
+        <i class="ri-lock-line form__icon"></i>
+        {{ form.password2 }}
+        <span class="form__bar"></span>
+    </div>
+    <button type="submit" class="form__button">Sign up</button>
+    <p class="form__switch">
+        Already have an account? <a href="{% url 'user:login' %}">Login</a>
+    </p>
+{% endblock content %}

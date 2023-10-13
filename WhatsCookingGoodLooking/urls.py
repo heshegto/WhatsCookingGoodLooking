@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from cooking.views import IndexView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('cooking.urls', namespace='cooking'))
+    path('', include('cooking.urls', namespace='cooking')),
+    path('user/', include('user.urls', namespace='user'))
 ]
