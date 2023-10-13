@@ -11,7 +11,10 @@
         {{ form.password }}
         <span class="form__bar"></span>
     </div>
-    <button type="submit" class="form__button">Login</button>
+    <input type="submit" class="form__button" value="Login"/>
+    {% if field.errors %}
+        <small>{{ field.errors|striptags }}</small>
+    {% endif %}
     <p class="form__switch">
         Don't have an account? <a href="{% url 'user:sign_up' %}">Sign up</a>
     </p>

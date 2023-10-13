@@ -5,6 +5,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from user.mixins import TitleMixin
 from user.forms import UserLoginForm, UserRegistrationForm
 from user.models import User
+from django.contrib import messages
 
 
 class UserLoginView(TitleMixin, LoginView):
@@ -13,6 +14,13 @@ class UserLoginView(TitleMixin, LoginView):
     redirect_authenticated_user = True
     success_url = reverse_lazy('cooking:index')
     title = 'Login'
+
+    def get_success_url(self):
+        return reverse_lazy('cooking:index')
+
+    def form_invalid(self, form):
+        messages.error(self.request, 'Invalid username or password')
+        return self.render_to_response(self.get_context_data(form=form))
 
 
 class SignUpView(TitleMixin, SuccessMessageMixin, CreateView):
